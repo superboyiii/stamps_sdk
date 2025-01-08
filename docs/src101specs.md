@@ -77,6 +77,8 @@ When `sig` is set in mint, the whitelist price in sats  should be `coef`*`pri`/1
 
 `tokenid` and `dua` in `sig` json will overwrite these ones in upper layer of mint method. That means the values in `sig` determine the final parameters of this transaction.
 
+In `MINT` transaction, vout[0] MUST be one of `rec` addresses, otherwise transaction is invalid.
+
 
 ### TRANSFER
 
@@ -180,6 +182,9 @@ When `type` is "txt", `data` can be any you'd like to set. Some key words like "
   "dua": "2" //(uint8)years of duration. Expire date = current expire date + dua
 }
 ```
+
+In `RENEW` transaction, vout[0] MUST be one of `rec` addresses, otherwise transaction is invalid.
+
 
 ### TRANSFEROWNERSHIP
 
